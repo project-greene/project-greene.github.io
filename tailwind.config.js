@@ -6,6 +6,7 @@ module.exports = {
         riptide: "#8EEDD2",
         "caribbean-green": "#00CC81",
         "blue-ribbon": "#003EE7",
+        "mid-grey": "#636366",
       },
       fontFamily: {
         dmsans: ["DM Sans"],
