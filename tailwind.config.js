@@ -7,6 +7,7 @@ module.exports = {
         "caribbean-green": "#00CC81",
         "blue-ribbon": "#003EE7",
         "mid-grey": "#636366",
+        alto: "#CCCCCC",
       },
       fontFamily: {
         dmsans: ["DM Sans"],
