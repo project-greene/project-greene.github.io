@@ -4,10 +4,13 @@
     "tailwind:build": "tailwindcss build -i src/input.css -o dist/output.css",
     "tailwind:build:production": "NODE_ENV=production tailwindcss build -i src/input.css -o dist/output.css --minify",
     "minify": "html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o index.html src/index.html",
-    "serve": "npm run tailwind:watch & http-server"
+    "serve": "http-server -c-1",
+    "build": "npm run tailwind:build:production && npm run minify"
   },
   "devDependencies": {
     "html-minifier-terser": "^7.0.0-alpha.2",
+    "prettier": "^2.6.0",
+    "prettier-plugin-tailwindcss": "^0.1.8",
     "tailwindcss": "^3.0.23"
   },
   "dependencies": {
