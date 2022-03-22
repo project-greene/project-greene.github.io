@@ -5,10 +5,12 @@ module.exports = {
       colors: {
         riptide: "#8EEDD2",
         "caribbean-green": "#00CC81",
+        "blue-ribbon": "#003EE7",
       },
       fontFamily: {
         dmsans: ["DM Sans"],
         manrope: ["Manrope"],
+        dmmono: ["DM Mono", "monospace"],
       },
     },
   },
