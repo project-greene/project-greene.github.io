@@ -3,10 +3,14 @@
     "tailwind:watch": "tailwindcss -i src/input.css -o dist/output.css --watch",
     "tailwind:build": "tailwindcss build -i src/input.css -o dist/output.css",
     "tailwind:build:production": "NODE_ENV=production tailwindcss build -i src/input.css -o dist/output.css --minify",
-    "minify": "html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o index.html src/index.html"
+    "minify": "html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o index.html src/index.html",
+    "serve": "npm run tailwind:watch & http-server"
   },
   "devDependencies": {
-    "tailwindcss": "^3.0.23",
-    "html-minifier-terser": "^7.0.0-alpha.2"
+    "html-minifier-terser": "^7.0.0-alpha.2",
+    "tailwindcss": "^3.0.23"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
   }
 }
