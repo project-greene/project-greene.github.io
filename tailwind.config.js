@@ -9,6 +9,8 @@ module.exports = {
         "mid-grey": "#636366",
         alto: "#CCCCCC",
         "light-grey": "#F6F6F6",
+        "dark-grey": "#1E1E1E",
+        ice: "#E1FAEB",
       },
       fontFamily: {
         dmsans: ["DM Sans"],
