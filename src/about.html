@@ -236,23 +236,28 @@
               Join our waitlist for exclusive access to Halo's high impact
               investment platform.
             </div>
-            <div class="pt-[30px] md:flex md:flex-row">
-              <div class="md:w-[380px]">
-                <input
-                  type="text"
-                  placeholder="Enter Email Address"
-                  class="h-[54px] w-full rounded-none bg-mid-grey px-[25px] font-manrope text-[16px] leading-[179.2%] tracking-[0.04em]"
-                />
+            <form enctype="multipart/form-data" method="post" name="waitlist">
+              <div class="pt-[30px] md:flex md:flex-row">
+                <div class="md:w-[380px]">
+                  <input
+                    id="waitlistEmail"
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="Enter Email Address"
+                    class="h-[54px] w-full rounded-none bg-mid-grey px-[25px] font-manrope text-[16px] leading-[179.2%] tracking-[0.04em]"
+                  />
+                </div>
+                <div>
+                  <input
+                    id="waitlistSubmit"
+                    type="submit"
+                    class="mt-[25px] inline-block bg-caribbean-green py-[15px] px-[25px] font-dmsans text-[16px] font-bold uppercase tracking-[0.105em] text-black md:mt-0 md:ml-[20px]"
+                    value="JOIN OUR WAITLIST"
+                  />
+                </div>
               </div>
-              <div>
-                <a
-                  href="#"
-                  class="mt-[25px] inline-block bg-caribbean-green py-[15px] px-[25px] font-dmsans text-[16px] font-bold uppercase tracking-[0.105em] text-black md:mt-0 md:ml-[20px]"
-                >
-                  JOIN OUR WAITLIST
-                </a>
-              </div>
-            </div>
+            </form>
             <div class="hidden md:mt-[95px] md:block">
               <img src="/images/logo.svg" />
             </div>
@@ -268,6 +273,42 @@
         </div>
       </div>
     </div>
+
+    <script type="text/javascript">
+      var form = document.forms.namedItem("waitlist");
+      form.addEventListener(
+        "submit",
+        function (ev) {
+          ev.preventDefault();
+
+          var oData = new FormData(form);
+
+          var input = document.getElementById("waitlistEmail");
+          var button = document.getElementById("waitlistSubmit");
+
+          var oReq = new XMLHttpRequest();
+          oReq.open("POST", "https://halo.donbeave.workers.dev/submit", true);
+          oReq.onload = function (oEvent) {
+            if (oReq.status == 200) {
+              button.value = "Joined";
+
+              alert(
+                "Thanks! You’re now part of the movement that wants to save for a better tomorrow - we’ll be in touch."
+              );
+            } else {
+              alert("Internal Server Error)");
+            }
+          };
+
+          input.disabled = true;
+          button.disabled = true;
+          button.value = "Loading";
+
+          oReq.send(oData);
+        },
+        false
+      );
+    </script>
 
     <div class="mx-auto max-w-[2000px] bg-dark-grey">
       <div class="px-[33px] md:px-[120px]">
