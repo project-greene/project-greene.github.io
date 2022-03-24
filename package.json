@@ -3,7 +3,7 @@
     "tailwind:watch": "tailwindcss -i src/input.css -o dist/output.css --watch",
     "tailwind:build": "tailwindcss build -i src/input.css -o dist/output.css",
     "tailwind:build:production": "NODE_ENV=production tailwindcss build -i src/input.css -o dist/output.css --minify",
-    "minify": "html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o index.html src/index.html",
+    "minify": "html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o index.html src/index.html && html-minifier-terser --collapse-whitespace --remove-comments --remove-attribute-quotes --minify-js -o about.html src/about.html",
     "serve": "http-server -c-1",
     "build": "npm run tailwind:build:production && npm run minify"
   },
